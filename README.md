@@ -28,13 +28,16 @@ A full-stack learning platform for statistics and probability education, featuri
 3. **Start the application:**
    ```bash
    # Start database services
-   ./start_db.ps1
+   ./start_database.ps1
    
    # Start backend (in new terminal)
-   ./run_backend.ps1
+   ./start_backend.ps1
    
    # Start frontend (in new terminal)
-   ./run_frontend.ps1
+   ./start_frontend.ps1
+   
+   # Or start everything at once
+   ./start_all.ps1
    ```
 
 ## 📁 Project Structure
@@ -65,10 +68,10 @@ Data_Literacy/
 
 ## 🔧 Available Scripts
 
-- `start_db.ps1` - Start PostgreSQL and Redis databases
-- `run_backend.ps1` - Start the FastAPI backend server
-- `run_frontend.ps1` - Start the React development server
-- `start_servers.ps1` - Start both frontend and backend
+- `start_database.ps1` - Start PostgreSQL and Redis databases
+- `start_backend.ps1` - Start the FastAPI backend server
+- `start_frontend.ps1` - Start the React development server
+- `start_all.ps1` - Start both frontend and backend
 
 ## 📖 Documentation
 

@@ -2,7 +2,7 @@
 Write-Host "🚀 Starting Backend Server..." -ForegroundColor Green
 
 # Ensure we're in the correct directory
-Set-Location "stats-learning-backend"
+Set-Location "backend"
 
 # Check if PostgreSQL is running
 Write-Host "Checking PostgreSQL connection..." -ForegroundColor Yellow
@@ -11,8 +11,8 @@ try {
 } catch {
     Write-Host "❌ PostgreSQL not accessible. Starting databases..." -ForegroundColor Red
     Set-Location ".."
-    & ".\start_db.ps1"
-    Set-Location "stats-learning-backend"
+    & ".\start_database.ps1"
+    Set-Location "backend"
     Start-Sleep -Seconds 10
 }
 
