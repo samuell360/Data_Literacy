@@ -1,0 +1,40 @@
+{
+    "include": [
+        "stats-learning-backend/app",
+        "test_*.py",
+        "*.py"
+    ],
+    "exclude": [
+        "**/__pycache__",
+        "**/.pytest_cache",
+        "**/node_modules",
+        "stats-learning-backend/tests",
+        "stats-learning-backend/alembic/versions"
+    ],
+    "pythonVersion": "3.9",
+    "pythonPlatform": "Windows",
+    "executionEnvironments": [
+        {
+            "root": ".",
+            "pythonVersion": "3.9",
+            "pythonPlatform": "Windows",
+            "extraPaths": []
+        },
+        {
+            "root": "stats-learning-backend",
+            "pythonVersion": "3.9",
+            "pythonPlatform": "Windows",
+            "pythonPath": "stats-learning-backend\\.venv\\Scripts\\python.exe",
+            "extraPaths": [
+                "stats-learning-backend\\.venv\\lib\\site-packages",
+                "stats-learning-backend"
+            ]
+        }
+    ],
+    "typeCheckingMode": "basic",
+    "useLibraryCodeForTypes": true,
+    "reportMissingImports": "warning",
+    "reportMissingTypeStubs": "none",
+    "venvPath": ".",
+    "venv": "stats-learning-backend/.venv"
+}

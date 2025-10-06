@@ -1,0 +1,1 @@
+{"simType":"binomialBars","params":{"n":10,"p":0.5,"trials":1000,"overlays":{"mean":true,"stdBands":true}}}

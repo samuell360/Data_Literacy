@@ -1,0 +1,1 @@
+{"simType":"coinFlipper","params":{"trials":200,"p":0.5,"batch":20,"overlays":{"runningMean":true,"target":0.5}}}

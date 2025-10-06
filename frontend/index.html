@@ -1,0 +1,30 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Data Literacy Learning Platform</title>
+      
+      <!-- Prevent extension interference -->
+      <meta name="referrer" content="no-referrer" />
+      <style>
+        /* Prevent extension CSS injection */
+        html { isolation: isolate; }
+        
+        /* Hide extension-injected elements */
+        [class*="extension-"], 
+        [id*="extension-"],
+        [class*="chrome-extension"],
+        [id*="chrome-extension"] {
+          display: none !important;
+        }
+      </style>
+    </head>
+
+    <body>
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+    </body>
+  </html>
+  

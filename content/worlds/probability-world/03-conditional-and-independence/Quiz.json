@@ -1,0 +1,10 @@
+{
+  "items": [
+    {"id":"t3-1e","diff":"easy","type":"fill","stem":"Definition: P(A|B)= __ / __.","answer":"P(A∩B)/P(B)","explain":"Standard definition."},
+    {"id":"t3-2e","diff":"easy","type":"mcq","stem":"If A and B independent, P(A∩B)=?","choices":["P(A)+P(B)","P(A)P(B)","P(A)/P(B)","1−P(B)"],"answerIndex":1,"explain":"Product rule."},
+    {"id":"t3-3m","diff":"medium","type":"fill","stem":"From 100 users: A=40, B=50, A∩B=25. P(A|B)=__.","answer":"0.5","explain":"25/50."},
+    {"id":"t3-4m","diff":"medium","type":"mcq","stem":"With the same data, are A and B independent?","choices":["Yes","No"],"answerIndex":1,"explain":"0.4×0.5=0.20 ≠ 0.25."},
+    {"id":"t3-5h","diff":"hard","type":"fill","stem":"P(A)=0.4, P(B|A)=0.6. Then P(A∩B)=__.","answer":"0.24","explain":"0.4×0.6."},
+    {"id":"t3-6h","diff":"hard","type":"tf","stem":"If A and B are mutually exclusive, they can still be independent.","answer":false,"explain":"Exclusive ⇒ P(A∩B)=0 but P(A)P(B)>0 unless one is 0."}
+  ]
+}

@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Base font size */
+  --font-size: 16px;
+  
+  /* Typography Scale */
+  --text-display-xl: 3rem; /* 48px */
+  --text-display-lg: 2.25rem; /* 36px */
+  --text-display-md: 1.875rem; /* 30px */
+  --text-h1: 1.5rem; /* 24px */
+  --text-h2: 1.25rem; /* 20px */
+  --text-base: 1rem; /* 16px */
+  --text-caption-lg: 0.875rem; /* 14px */
+  --text-caption-sm: 0.75rem; /* 12px */
+  
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.4;
+  --leading-relaxed: 1.6;
+  
+  /* Font Families */
+  --font-display: 'Sora', sans-serif;
+  --font-ui: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Base Colors - Light Mode */
+  --background: #F7F8FC;
+  --foreground: #101727;
+  --card: #FFFFFF;
+  --card-foreground: #101727;
+  --text-muted: #5D6473;
+  --border: #E6E9F2;
+  --border-glass: rgba(255, 255, 255, 0.12);
+  
+  /* Accent Colors */
+  --probability: #E86AA6;
+  --hypothesis: #64E2BA;
+  --simulation: #7C9BFF;
+  --primary: #3B82F6;
+  
+  /* Status Colors */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  
+  /* Gradients */
+  --gradient-probability: linear-gradient(135deg, #FDE7F2, #E9F1FF);
+  --gradient-hypothesis: linear-gradient(135deg, #F2FFF7, #E9FCF3);
+  
+  /* Legacy Variables for ShadCN compatibility */
+  --popover: #FFFFFF;
+  --popover-foreground: #101727;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #101727;
+  --muted: #F1F5F9;
+  --muted-foreground: #5D6473;
+  --accent: #F1F5F9;
+  --accent-foreground: #101727;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --input: transparent;
+  --input-background: #F1F5F9;
+  --switch-background: #E6E9F2;
+  --ring: #3B82F6;
+  
+  /* Spacing System (8px base) */
+  --space-1: 0.5rem; /* 8px */
+  --space-2: 1rem; /* 16px */
+  --space-3: 1.5rem; /* 24px */
+  --space-4: 2rem; /* 32px */
+  --space-6: 3rem; /* 48px */
+  --space-8: 4rem; /* 64px */
+  
+  /* Border Radius */
+  --radius-md: 0.625rem; /* 10px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-2xl: 1.5rem; /* 24px */
+  
+  /* Shadows */
+  --shadow-card: 0 8px 28px rgba(16, 23, 39, 0.08);
+  --shadow-glass: 0 4px 12px rgba(16, 23, 39, 0.04);
+  
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Legacy radius for ShadCN */
+  --radius: var(--radius-lg);
+  
+  /* Chart colors */
+  --chart-1: var(--primary);
+  --chart-2: var(--probability);
+  --chart-3: var(--hypothesis);
+  --chart-4: var(--simulation);
+  --chart-5: var(--success);
+  
+  /* Sidebar variables */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #101727;
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #101727;
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+.dark {
+  /* Base Colors - Dark Mode */
+  --background: #0E111A;
+  --foreground: #E7ECF3;
+  --card: rgba(255, 255, 255, 0.06);
+  --card-foreground: #E7ECF3;
+  --text-muted: #A8B0BD;
+  --border: rgba(255, 255, 255, 0.12);
+  
+  /* Legacy Variables for ShadCN compatibility */
+  --popover: #1A1D29;
+  --popover-foreground: #E7ECF3;
+  --primary: var(--primary);
+  --primary-foreground: #FFFFFF;
+  --secondary: rgba(255, 255, 255, 0.06);
+  --secondary-foreground: #E7ECF3;
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: #A8B0BD;
+  --accent: rgba(255, 255, 255, 0.06);
+  --accent-foreground: #E7ECF3;
+  --destructive: var(--error);
+  --destructive-foreground: #FFFFFF;
+  --input: rgba(255, 255, 255, 0.06);
+  --input-background: rgba(255, 255, 255, 0.06);
+  --switch-background: rgba(255, 255, 255, 0.12);
+  --ring: var(--primary);
+  
+  /* Chart colors for dark mode */
+  --chart-1: var(--primary);
+  --chart-2: var(--probability);
+  --chart-3: var(--hypothesis);
+  --chart-4: var(--simulation);
+  --chart-5: var(--success);
+  
+  /* Sidebar variables for dark mode */
+  --sidebar: #1A1D29;
+  --sidebar-foreground: #E7ECF3;
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(255, 255, 255, 0.06);
+  --sidebar-accent-foreground: #E7ECF3;
+  --sidebar-border: rgba(255, 255, 255, 0.12);
+  --sidebar-ring: var(--primary);
+  
+  /* Update shadows for dark mode */
+  --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.24);
+  --shadow-glass: 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography using custom design tokens
+ */
+@layer base {
+  body {
+    font-family: var(--font-ui);
+  }
+  
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: var(--text-display-xl);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--leading-tight);
+    }
+    
+    .display-lg {
+      font-family: var(--font-display);
+      font-size: var(--text-display-lg);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--leading-tight);
+    }
+    
+    .display-md {
+      font-family: var(--font-display);
+      font-size: var(--text-display-md);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--leading-tight);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--leading-normal);
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--leading-normal);
+    }
+
+    h3, h4, h5, h6 {
+      font-family: var(--font-ui);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--leading-normal);
+    }
+
+    p {
+      font-family: var(--font-ui);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--leading-relaxed);
+    }
+
+    label {
+      font-family: var(--font-ui);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--leading-normal);
+    }
+
+    button {
+      font-family: var(--font-ui);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--leading-normal);
+    }
+
+    input, textarea, select {
+      font-family: var(--font-ui);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--leading-normal);
+    }
+    
+    code, pre {
+      font-family: var(--font-mono);
+      font-size: var(--text-caption-lg);
+      font-weight: var(--font-weight-normal);
+    }
+    
+    .caption-lg {
+      font-family: var(--font-ui);
+      font-size: var(--text-caption-lg);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--leading-normal);
+    }
+    
+    .caption-sm {
+      font-family: var(--font-ui);
+      font-size: var(--text-caption-sm);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--leading-normal);
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Custom styles for lesson content */
+.lesson-content {
+  line-height: 1.7;
+}
+
+.lesson-content h1,
+.lesson-content h2,
+.lesson-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.lesson-content p {
+  margin-bottom: 1rem;
+}
+
+.lesson-content li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
+.lesson-content blockquote {
+  margin: 1.5rem 0;
+}
+
+.lesson-content code {
+  font-size: 0.9em;
+}
+
+/* Fix for browser extension conflicts */
+.lesson-viewer-container {
+  isolation: isolate;
+}

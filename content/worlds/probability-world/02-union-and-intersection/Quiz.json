@@ -1,0 +1,10 @@
+{
+  "items": [
+    {"id":"t2-1e","diff":"easy","type":"mcq","stem":"If A and B are mutually exclusive, P(A∩B)=?","choices":["1","P(A)+P(B)","0","P(A)P(B)"],"answerIndex":2,"explain":"Can't happen together."},
+    {"id":"t2-2e","diff":"easy","type":"mcq","stem":"Exclusive case: P(A∪B)=?","choices":["P(A)+P(B)","P(A)+P(B)-P(A∩B)","P(A)P(B)","1-P(A)"],"answerIndex":0,"explain":"No overlap to subtract."},
+    {"id":"t2-3m","diff":"medium","type":"fill","stem":"P(A)=0.4, P(B)=0.5, P(A∩B)=0.25. P(A∪B)=__.","answer":"0.65","explain":"0.4+0.5−0.25."},
+    {"id":"t2-4m","diff":"medium","type":"mcq","stem":"Are 'rolled 1' and 'rolled 2' exclusive?","choices":["Yes","No"],"answerIndex":0,"explain":"One roll can't be both."},
+    {"id":"t2-5h","diff":"hard","type":"mcq","stem":"Pick a scenario where P(A)+P(B)>1 but P(A∪B)≤1.","choices":["Exclusive events","Overlapping events","Independent events only","Disjoint partitions"],"answerIndex":1,"explain":"Overlap allows sums >1; union stays ≤1."},
+    {"id":"t2-6h","diff":"hard","type":"fill","stem":"If P(A)=0.7 and P(A∪B)=0.9 with P(B)=0.5, then P(A∩B)=__.","answer":"0.3","explain":"0.7+0.5−0.9=0.3."}
+  ]
+}

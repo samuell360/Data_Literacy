@@ -1,0 +1,14 @@
+{
+  "simHub": {
+    "topics": [
+      {"id":"probability_basics","title":"What is Probability?","simType":"coinFlipper","params":{"trials":200,"p":0.5,"batch":20}},
+      {"id":"union_intersection","title":"Unions & Intersections","simType":"contingencyPlayground","params":{"a":40,"b":50,"ab":25,"total":100}},
+      {"id":"conditional_independence","title":"Conditional & Independence","simType":"twoByTwoToggle","params":{"a":40,"b":50,"ab":25,"total":100,"independent":false}},
+      {"id":"counting","title":"Counting Principles","simType":"outcomeTree","params":{"steps":3,"choicesPerStep":[2,3,4],"orderMatters":true,"noRepeats":false}},
+      {"id":"discrete_rv_emv","title":"Discrete RV + EMV","simType":"distributionTable","params":{"rows":[{"x":0,"p":0.2},{"x":1,"p":0.5},{"x":2,"p":0.3}]}},
+      {"id":"binomial","title":"Binomial","simType":"binomialBars","params":{"n":10,"p":0.5,"trials":1000}},
+      {"id":"poisson","title":"Poisson (Advanced)","simType":"arrivalSimulator","params":{"lambda":6,"window":"30m"}},
+      {"id":"hypergeometric","title":"Hypergeometric (Advanced)","simType":"bagDraw","params":{"N":52,"R":4,"n":5,"replacement":false}}
+    ]
+  }
+}

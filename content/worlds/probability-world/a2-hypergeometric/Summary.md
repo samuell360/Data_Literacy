@@ -1,0 +1,2 @@
+- Use when sampling **without replacement**
+- Probabilities shift after each draw (dependence)

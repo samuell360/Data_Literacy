@@ -1,0 +1,12 @@
+{
+  "items": [
+    {"id":"t6-1e","diff":"easy","type":"mcq","stem":"Which scenario is binomial?","choices":["Rolling 1 die until a 6 appears","Shooting 10 free-throws, each with p=0.7","Drawing 5 cards without replacement","Measuring commute times"],"answerIndex":1,"explain":"Fixed n, same p, independent."},
+    {"id":"t6-2e","diff":"easy","type":"fill","stem":"n=5, p=0.2. P(X=0)=__ (4 d.p.).","answer":"0.3277","explain":"(0.8)^5 ≈ 0.32768."},
+    {"id":"t6-3m","diff":"medium","type":"fill","stem":"n=5, p=0.2. P(X=2)=__ (4 d.p.).","answer":"0.2048","explain":"5C2·0.2^2·0.8^3."},
+    {"id":"t6-4m","diff":"medium","type":"fill","stem":"n=20, p=0.3. μ=__, σ≈__ (2 d.p.).","answer":"6, 2.05","explain":"μ=6; σ=√(4.2)≈2.05."},
+    {"id":"t6-5m","diff":"medium","type":"fill","stem":"n=6, p=0.1. P(X≥1)=__ (4 d.p.).","answer":"0.4686","explain":"1−(0.9)^6 ≈ 0.4686."},
+    {"id":"t6-6h","diff":"hard","type":"mcq","stem":"Same μ but different n: which has larger σ?","choices":["n=10, p=0.5 (μ=5)","n=40, p=0.125 (μ=5)"],"answerIndex":1,"explain":"σ=√(np(1−p)): 1.58 vs 2.09."},
+    {"id":"t6-7h","diff":"hard","type":"fill","stem":"n=12, p=0.6. P(X=12)=__ (4 d.p.).","answer":"0.0022","explain":"0.6^12 ≈ 0.00218."},
+    {"id":"t6-8h","diff":"hard","type":"tf","stem":"If trials aren't independent, binomial doesn't apply.","answer":true,"explain":"Independence is required."}
+  ]
+}

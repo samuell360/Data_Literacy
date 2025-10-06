@@ -1,0 +1,3 @@
+- Checklist: independent? fixed \(n\)? same \(p\)?
+- PMF \( \binom{n}{x}p^x(1-p)^{n-x} \)
+- \(\mu=np\), \(\sigma=\sqrt{np(1-p)}\); \(P(X\ge1)=1-(1-p)^n\)

@@ -1,0 +1,10 @@
+{
+  "items": [
+    {"id":"t5-1e","diff":"easy","type":"mcq","stem":"Is [(0,0.2),(1,0.5),(2,0.3)] a valid distribution?","choices":["Yes","No"],"answerIndex":0,"explain":"Nonnegative and sums to 1."},
+    {"id":"t5-2e","diff":"easy","type":"fill","stem":"For the same table, E[X]=__.","answer":"1.1","explain":"0·0.2+1·0.5+2·0.3=1.1."},
+    {"id":"t5-3m","diff":"medium","type":"fill","stem":"Var[X]=__ (2 d.p.).","answer":"0.49","explain":"E[X^2]=1.7, Var=1.7−1.21=0.49."},
+    {"id":"t5-4m","diff":"medium","type":"mcq","stem":"Which table is more variable?","choices":["A (σ=0.50)","B (σ=0.80)"],"answerIndex":1,"explain":"Larger σ ⇒ more spread."},
+    {"id":"t5-5h","diff":"hard","type":"fill","stem":"Option A: -2 (p=0.3) or 3 (p=0.7). EMV(A)=__.","answer":"1.5","explain":"-2·0.3+3·0.7=1.5."},
+    {"id":"t5-6h","diff":"hard","type":"mcq","stem":"Option B pays 1 for sure. Which EMV is higher?","choices":["A","B"],"answerIndex":0,"explain":"1.5 > 1.0."}
+  ]
+}

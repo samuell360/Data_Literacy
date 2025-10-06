@@ -1,0 +1,3 @@
+- Product rule multiplies choices per step
+- \(nPr=\frac{n!}{(n-r)!}\), \(nCr=\frac{n!}{r!(n-r)!}\)
+- Order matters? Use permutations. Otherwise, combinations.

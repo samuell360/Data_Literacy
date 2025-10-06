@@ -1,0 +1,3 @@
+- Union vs intersection
+- Exclusive ⇒ \(P(A\cap B)=0\)
+- General addition: \(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)

@@ -1,0 +1,10 @@
+{
+  "items": [
+    {"id":"pa-1e","diff":"easy","type":"fill","stem":"λ=6 per 30 min. P(X=4)=__ (4 d.p.).","answer":"0.1339","explain":"e^{-6}·6^4/4!."},
+    {"id":"pa-2e","diff":"easy","type":"fill","stem":"λ=12 per hour. In 15 minutes, λ=__.","answer":"3","explain":"Quarter hour."},
+    {"id":"pa-3m","diff":"medium","type":"fill","stem":"λ=3 (per 15 min). P(X=4)=__ (4 d.p.).","answer":"0.1680","explain":"e^{-3}·3^4/4!."},
+    {"id":"pa-4m","diff":"medium","type":"mcq","stem":"Mean and variance of Poisson(λ) are:","choices":["μ=λ, Var=λ","μ=λ, Var=√λ","μ=√λ, Var=λ","μ=1/λ, Var=λ"],"answerIndex":0,"explain":"Both equal λ."},
+    {"id":"pa-5h","diff":"hard","type":"mcq","stem":"When can Binomial(n,p) be approximated by Poisson?","choices":["n small, p large","n≥20 and p≤0.05","n=10 and p=0.5","When independence fails"],"answerIndex":1,"explain":"Rule of thumb."},
+    {"id":"pa-6h","diff":"hard","type":"fill","stem":"Binomial n=200, p=0.01. Using Poisson, λ=__.","answer":"2","explain":"λ=np."}
+  ]
+}

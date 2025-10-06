@@ -1,0 +1,3 @@
+- Use Poisson for random "arrivals" at rate \(\lambda\)
+- Mean and variance are both \(\lambda\)
+- Scale \(\lambda\) with interval length

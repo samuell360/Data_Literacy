@@ -1,0 +1,31 @@
+[
+  {"id":"fb-basic-range","latex":"0 \\le P(A) \\le 1","text":"probabilities live between 0 and 1","unlockedByTopic":"01-what-is-probability"},
+  {"id":"fb-basic-sum1","latex":"\\sum P(\\text{simple}) = 1","text":"simple outcome probabilities sum to 1","unlockedByTopic":"01-what-is-probability"},
+  {"id":"fb-complement","latex":"P(A^c) = 1 - P(A)","text":"probability of 'not A'","unlockedByTopic":"01-what-is-probability"},
+
+  {"id":"fb-addition-general","latex":"P(A\\cup B) = P(A) + P(B) - P(A\\cap B)","text":"union subtracts overlap","unlockedByTopic":"02-union-and-intersection"},
+  {"id":"fb-addition-exclusive","latex":"\\text{If }A\\cap B=0,\\; P(A\\cup B) = P(A)+P(B)","text":"exclusive union","unlockedByTopic":"02-union-and-intersection"},
+
+  {"id":"fb-conditional","latex":"P(A\\mid B) = \\frac{P(A\\cap B)}{P(B)}","text":"conditional probability","unlockedByTopic":"03-conditional-and-independence"},
+  {"id":"fb-multiplication-general","latex":"P(A\\cap B) = P(A)\\,P(B\\mid A)","text":"general multiplication rule","unlockedByTopic":"03-conditional-and-independence"},
+  {"id":"fb-independence-test","latex":"\\text{Independent} \\iff P(A\\cap B)=P(A)P(B)","text":"independence test","unlockedByTopic":"03-conditional-and-independence"},
+
+  {"id":"fb-npr","latex":"{}_{n}P_{r} = \\frac{n!}{(n-r)!}","text":"permutations (order matters)","unlockedByTopic":"04-counting-principles"},
+  {"id":"fb-ncr","latex":"{}_{n}C_{r} = \\frac{n!}{r!(n-r)!}","text":"combinations (order not)","unlockedByTopic":"04-counting-principles"},
+
+  {"id":"fb-expectation","latex":"E[X] = \\sum x\\,p(x)","text":"expected value (mean)","unlockedByTopic":"05-discrete-rv-and-emv"},
+  {"id":"fb-variance","latex":"\\mathrm{Var}(X) = \\sum (x-\\mu)^2 p(x)","text":"variance from table","unlockedByTopic":"05-discrete-rv-and-emv"},
+  {"id":"fb-sigma","latex":"\\sigma = \\sqrt{\\mathrm{Var}(X)}","text":"standard deviation","unlockedByTopic":"05-discrete-rv-and-emv"},
+  {"id":"fb-emv","latex":"\\text{EMV} = E[\\$]","text":"expected money value","unlockedByTopic":"05-discrete-rv-and-emv"},
+
+  {"id":"fb-binomial-pmf","latex":"P(X=x) = \\binom{n}{x} p^x (1-p)^{n-x}","text":"binomial pmf","unlockedByTopic":"06-binomial"},
+  {"id":"fb-binomial-mean","latex":"\\mu = np","text":"binomial mean","unlockedByTopic":"06-binomial"},
+  {"id":"fb-binomial-sd","latex":"\\sigma = \\sqrt{np(1-p)}","text":"binomial sd","unlockedByTopic":"06-binomial"},
+  {"id":"fb-atleast1","latex":"P(X\\ge 1)=1-(1-p)^n","text":"complement trick","unlockedByTopic":"06-binomial"},
+
+  {"id":"fb-poisson-pmf","latex":"P(X=x)=e^{-\\lambda}\\lambda^x/x!","text":"poisson pmf","unlockedByTopic":"a1-poisson"},
+  {"id":"fb-poisson-meanvar","latex":"E[X]=\\lambda,\\; \\mathrm{Var}(X)=\\lambda","text":"poisson mean/variance","unlockedByTopic":"a1-poisson"},
+  {"id":"fb-poisson-approx","latex":"\\text{If } n\\ge20, p\\le0.05:\\; \\text{Bin}(n,p)\\approx\\text{Pois}(\\lambda=np)","text":"binomial≈poisson guideline","unlockedByTopic":"a1-poisson"},
+
+  {"id":"fb-hypergeo-pmf","latex":"P(X=x)=\\dfrac{\\binom{R}{x}\\binom{N-R}{n-x}}{\\binom{N}{n}}","text":"hypergeometric pmf","unlockedByTopic":"a2-hypergeometric"}
+]

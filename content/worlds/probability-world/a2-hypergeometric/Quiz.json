@@ -1,0 +1,10 @@
+{
+  "items": [
+    {"id":"hg-1e","diff":"easy","type":"mcq","stem":"Which model: drawing 5 cards from a deck, no replacement?","choices":["Binomial","Hypergeometric","Poisson","Geometric"],"answerIndex":1,"explain":"Finite N, without replacement."},
+    {"id":"hg-2e","diff":"easy","type":"fill","stem":"Deck: N=52, aces R=4, draw n=5. P(exactly 1 ace)=__ (4 d.p.).","answer":"0.2995","explain":"[4C1·48C4]/[52C5]."},
+    {"id":"hg-3m","diff":"medium","type":"mcq","stem":"Main difference from binomial?","choices":["Hypergeometric needs λ","Probabilities stay constant","Draws are dependent","Outcomes must be times"],"answerIndex":2,"explain":"Dependence across draws."},
+    {"id":"hg-4m","diff":"medium","type":"fill","stem":"Urn: N=20, R=6, n=4. P(X=2)=__ (4 d.p.).","answer":"0.2817","explain":"[6C2·14C2]/[20C4] = 1365/4845 ≈ 0.2817."},
+    {"id":"hg-5h","diff":"hard","type":"tf","stem":"If N is very large and n small, hypergeometric ≈ binomial.","answer":true,"explain":"Tiny sampling fraction ⇒ near independence."},
+    {"id":"hg-6h","diff":"hard","type":"fill","stem":"Deck as above. P(no ace in 5) = __ (4 d.p.).","answer":"0.6588","explain":"48C5 / 52C5 ≈ 0.6588."}
+  ]
+}

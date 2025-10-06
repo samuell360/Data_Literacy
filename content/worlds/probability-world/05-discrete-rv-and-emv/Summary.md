@@ -1,0 +1,3 @@
+- Validity: nonnegative, sums to 1
+- Compute \(\mu,\sigma\) from the table
+- EMV compares money outcomes fairly (ignoring risk)

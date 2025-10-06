@@ -1,0 +1,3 @@
+- Conditionals live inside the "given" group
+- Independence check: is \(P(A\cap B)=P(A)P(B)\)?
+- Multiplication rules (general vs independent)

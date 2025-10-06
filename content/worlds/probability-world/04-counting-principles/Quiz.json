@@ -1,0 +1,10 @@
+{
+  "items": [
+    {"id":"t4-1e","diff":"easy","type":"fill","stem":"2 tops × 3 shoes → total outfits = __.","answer":"6","explain":"Product rule."},
+    {"id":"t4-2e","diff":"easy","type":"fill","stem":"Choose 2 from 5 (order doesn't matter) = __.","answer":"10","explain":"5C2 = 10."},
+    {"id":"t4-3m","diff":"medium","type":"fill","stem":"License plates: 2 letters then 3 digits (repeats allowed) = __.","answer":"676000","explain":"26^2 × 10^3."},
+    {"id":"t4-4m","diff":"medium","type":"fill","stem":"Arrange 4 distinct books on a shelf = __.","answer":"24","explain":"4!."},
+    {"id":"t4-5h","diff":"hard","type":"fill","stem":"Password: 4 distinct letters then 2 distinct digits (no repeats) = __.","answer":"32292000","explain":"26·25·24·23·10·9 = 32,292,000."},
+    {"id":"t4-6h","diff":"hard","type":"fill","stem":"Pick a 3-person team from 7, then choose a chair from that team = __.","answer":"105","explain":"7C3 · 3 = 35 · 3 = 105."}
+  ]
+}
