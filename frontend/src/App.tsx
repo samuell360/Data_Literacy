@@ -12,7 +12,6 @@ import { Card } from "./components/ui/card";
 import { Badge } from "./components/ui/badge";
 import { authApi, apiClient } from "./services/api";
 import type { User } from "./services/api";
-import "./learning/debug"; // Import debug utilities
 import "./learning/reset"; // Import reset utilities
 import { 
   Home, 
