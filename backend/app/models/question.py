@@ -11,7 +11,7 @@ from sqlalchemy import (
     Enum as SQLEnum, Index
 )
 from sqlalchemy.orm import relationship
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy import JSON
 
 from app.db.base import Base, TimestampMixin
 
@@ -80,7 +80,7 @@ class Question(Base, TimestampMixin):
     
     # Answer options and correct answer
     options_json = Column(
-        JSONB,
+        JSON,
         nullable=True,
         comment="Answer choices (for MCQ, multi-select)"
     )
@@ -108,14 +108,14 @@ class Question(Base, TimestampMixin):
     )
     
     concept_tags = Column(
-        JSONB,
+        JSON,
         nullable=True,
         default=list,
         comment="Concepts this question tests"
     )
     
     pitfall_tags = Column(
-        JSONB,
+        JSON,
         nullable=True,
         default=list,
         comment="Common mistakes this question catches"
@@ -155,14 +155,14 @@ class Question(Base, TimestampMixin):
     
     # Enhanced metadata for adaptive learning
     learning_objectives = Column(
-        JSONB,
+        JSON,
         nullable=True,
         default=list,
         comment="Learning objectives this question addresses"
     )
     
     prerequisite_concepts = Column(
-        JSONB,
+        JSON,
         nullable=True,
         default=list,
         comment="Concepts that should be understood before this question"
@@ -197,9 +197,6 @@ class Question(Base, TimestampMixin):
     __table_args__ = (
         Index('ix_questions_lesson_difficulty', 'lesson_id', 'difficulty_tag'),
         Index('ix_questions_type', 'question_type'),
-        # GIN index for JSONB columns (PostgreSQL specific)
-        Index('ix_questions_concept_tags', 'concept_tags', postgresql_using='gin'),
-        Index('ix_questions_pitfall_tags', 'pitfall_tags', postgresql_using='gin'),
     )
     
     @property

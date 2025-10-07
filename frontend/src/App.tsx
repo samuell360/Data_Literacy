@@ -13,6 +13,10 @@ import { Badge } from "./components/ui/badge";
 import { authApi, apiClient } from "./services/api";
 import type { User } from "./services/api";
 import "./learning/reset"; // Import reset utilities
+import "./styles/brilliant-design-system.css"; // Import Brilliant.org design system
+import { BrilliantDashboard } from "./components/brilliant/BrilliantDashboard";
+import { BrilliantLearningPath } from "./components/brilliant/BrilliantLearningPath";
+import { BrilliantLessonViewer } from "./components/brilliant/BrilliantLessonViewer";
 import { 
   Home, 
   BookOpen, 
@@ -24,7 +28,7 @@ import {
   BarChart3
 } from "lucide-react";
 
-type Screen = "dashboard" | "learning" | "simulations" | "leaderboard" | "showcase";
+type Screen = "dashboard" | "learning" | "simulations" | "leaderboard" | "showcase" | "lesson";
 type AuthScreen = "login" | "signup";
 
 export default function App() {
@@ -36,6 +40,7 @@ export default function App() {
   const [needsAvatarSelection, setNeedsAvatarSelection] = useState(false);
   const [loading, setLoading] = useState(true);
   const [openFirstLesson, setOpenFirstLesson] = useState(false);
+  const [currentLesson, setCurrentLesson] = useState<any>(null);
 
   // Check for existing authentication on app load
   useEffect(() => {
@@ -135,17 +140,59 @@ export default function App() {
     }
   };
 
+  const handleLessonStart = (lessonId: string) => {
+    // Mock lesson data - in real app, this would come from API
+    const mockLesson = {
+      id: lessonId,
+      title: "What is Probability?",
+      description: "Understanding the fundamental concept of probability",
+      questions: [
+        {
+          id: 'q1',
+          type: 'multiple-choice' as const,
+          question: 'What is the probability of flipping a fair coin and getting heads?',
+          options: ['0.25', '0.5', '0.75', '1.0'],
+          correctAnswer: '0.5',
+          explanation: 'A fair coin has two equally likely outcomes: heads or tails. The probability of getting heads is 1/2 = 0.5.',
+          difficulty: 'easy' as const
+        },
+        {
+          id: 'q2',
+          type: 'multiple-choice' as const,
+          question: 'If you roll a standard six-sided die, what is the probability of rolling a number greater than 4?',
+          options: ['1/6', '1/3', '1/2', '2/3'],
+          correctAnswer: '1/3',
+          explanation: 'The numbers greater than 4 on a six-sided die are 5 and 6. So there are 2 favorable outcomes out of 6 total outcomes, giving us 2/6 = 1/3.',
+          difficulty: 'medium' as const
+        }
+      ],
+      estimatedTime: 15,
+      xpReward: 50
+    };
+    setCurrentLesson(mockLesson);
+    setCurrentScreen("lesson");
+  };
+
+  const handleLessonComplete = (score: number, timeSpent: number) => {
+    console.log(`Lesson completed with score: ${score}, time: ${timeSpent}s`);
+    setCurrentLesson(null);
+    setCurrentScreen("learning");
+  };
+
   const renderCurrentScreen = () => {
     switch (currentScreen) {
       case "dashboard":
-        return (
-          <Dashboard 
-            onContinueLearning={() => { setOpenFirstLesson(true); setCurrentScreen("learning"); }} 
-            onNavigate={handleNavigate}
-          />
-        );
+        return <BrilliantDashboard />;
       case "learning":
-        return <LearningPath onBack={() => setCurrentScreen("dashboard")} defaultOpen={openFirstLesson} onDefaultOpenConsumed={() => setOpenFirstLesson(false)} />;
+        return <BrilliantLearningPath onLessonStart={handleLessonStart} onBack={() => setCurrentScreen("dashboard")} />;
+      case "lesson":
+        return currentLesson ? (
+          <BrilliantLessonViewer 
+            lesson={currentLesson} 
+            onComplete={handleLessonComplete}
+            onBack={() => setCurrentScreen("learning")}
+          />
+        ) : null;
       case "simulations":
         return <SimulationLab />;
       case "leaderboard":
@@ -247,42 +294,97 @@ export default function App() {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Button
-            variant={currentScreen === "dashboard" ? "default" : "outline"}
-            className="flex flex-col items-center gap-2 h-auto p-6"
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className={`brilliant-card-interactive flex flex-col items-center gap-3 p-6 ${
+              currentScreen === "dashboard" ? 'border-2' : ''
+            }`}
+            style={{ 
+              borderColor: currentScreen === "dashboard" ? 'var(--brilliant-primary)' : 'transparent'
+            }}
             onClick={() => setCurrentScreen("dashboard")}
           >
-            <Home className="w-6 h-6" />
-            <span>Dashboard</span>
-          </Button>
+            <div 
+              className="w-12 h-12 rounded-xl flex items-center justify-center"
+              style={{ 
+                background: currentScreen === "dashboard" ? 'var(--brilliant-primary)' : 'var(--brilliant-gray-200)',
+                color: currentScreen === "dashboard" ? 'var(--brilliant-gray-800)' : 'var(--brilliant-gray-600)'
+              }}
+            >
+              <Home className="w-6 h-6" />
+            </div>
+            <span className="brilliant-heading-sm">Dashboard</span>
+          </motion.button>
           
-          <Button
-            variant={currentScreen === "learning" ? "default" : "outline"}
-            className="flex flex-col items-center gap-2 h-auto p-6"
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className={`brilliant-card-interactive flex flex-col items-center gap-3 p-6 ${
+              currentScreen === "learning" ? 'border-2' : ''
+            }`}
+            style={{ 
+              borderColor: currentScreen === "learning" ? 'var(--brilliant-probability)' : 'transparent'
+            }}
             onClick={() => setCurrentScreen("learning")}
           >
-            <BookOpen className="w-6 h-6" />
-            <span>Learning Path</span>
-          </Button>
+            <div 
+              className="w-12 h-12 rounded-xl flex items-center justify-center"
+              style={{ 
+                background: currentScreen === "learning" ? 'var(--brilliant-probability)' : 'var(--brilliant-gray-200)',
+                color: 'white'
+              }}
+            >
+              <BookOpen className="w-6 h-6" />
+            </div>
+            <span className="brilliant-heading-sm">Learning Path</span>
+          </motion.button>
           
-          <Button
-            variant={currentScreen === "simulations" ? "default" : "outline"}
-            className="flex flex-col items-center gap-2 h-auto p-6"
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className={`brilliant-card-interactive flex flex-col items-center gap-3 p-6 ${
+              currentScreen === "simulations" ? 'border-2' : ''
+            }`}
+            style={{ 
+              borderColor: currentScreen === "simulations" ? 'var(--brilliant-simulation)' : 'transparent'
+            }}
             onClick={() => setCurrentScreen("simulations")}
           >
-            <Beaker className="w-6 h-6" />
-            <span>Simulation Lab</span>
-          </Button>
+            <div 
+              className="w-12 h-12 rounded-xl flex items-center justify-center"
+              style={{ 
+                background: currentScreen === "simulations" ? 'var(--brilliant-simulation)' : 'var(--brilliant-gray-200)',
+                color: 'white'
+              }}
+            >
+              <Beaker className="w-6 h-6" />
+            </div>
+            <span className="brilliant-heading-sm">Simulation Lab</span>
+          </motion.button>
           
-          <Button
-            variant={currentScreen === "leaderboard" ? "default" : "outline"}
-            className="flex flex-col items-center gap-2 h-auto p-6"
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className={`brilliant-card-interactive flex flex-col items-center gap-3 p-6 ${
+              currentScreen === "leaderboard" ? 'border-2' : ''
+            }`}
+            style={{ 
+              borderColor: currentScreen === "leaderboard" ? 'var(--brilliant-hypothesis)' : 'transparent'
+            }}
             onClick={() => setCurrentScreen("leaderboard")}
           >
-            <Trophy className="w-6 h-6" />
-            <span>Leaderboard</span>
-          </Button>
-          
+            <div 
+              className="w-12 h-12 rounded-xl flex items-center justify-center"
+              style={{ 
+                background: currentScreen === "leaderboard" ? 'var(--brilliant-hypothesis)' : 'var(--brilliant-gray-200)',
+                color: 'white'
+              }}
+            >
+              <Trophy className="w-6 h-6" />
+            </div>
+            <span className="brilliant-heading-sm">Leaderboard</span>
+          </motion.button>
         </div>
       </Card>
 
